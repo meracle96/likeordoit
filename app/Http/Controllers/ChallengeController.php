@@ -71,7 +71,14 @@ class ChallengeController extends Controller
         $challenge = Challenge::where('slug', $slug)
           ->firstOrFail();
 
-        dd($challenge);
+        $challenge->views = $challenge->views + 1;
+        $challenge->update();
+
+        $popularchallenges = Challenge::all()->sortByDesc('views');
+
+        $types = Type::all();
+
+        return view('front.content.challenge-detail', compact('challenge', 'types', 'popularchallenges'));
     }
 
     /**

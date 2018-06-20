@@ -33,6 +33,8 @@
     <link href="{{ asset('front/icon/apple-touch-icon-32-precomposed.png') }}" rel="apple-touch-icon-precomposed">
     <link href="{{ asset('front/icon/favicon.png') }}" rel="shortcut icon">
 
+    @yield('custom_css')
+
 </head>
 <body class="header_sticky">
     <!-- Preloader -->
@@ -93,6 +95,8 @@
     <script src="{{ asset('front/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
     <script src="{{ asset('front/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
     <script src="{{ asset('front/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+
+    @yield('custom_js')
 
 </body>
 </html>
